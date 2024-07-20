@@ -3,7 +3,7 @@ main: Luthfi\EasyGamemode\Main
 version: 2.0.0
 api: 5.0.0
 author: Luthfi
-description: A simple plugin to change gamemodes easily
+description: A simple plugin to change gamemode easily
 
 commands:
   gmc:
@@ -22,6 +22,11 @@ commands:
     description: Change gamemode to spectator
     usage: /gmsp
     permission: eg.gmsp
+  easygamemode:
+    description: Main command for EasyGamemode
+    usage: /easygamemode [help]
+    aliases: [eg]
+    permission: eg.easygamemode
 
 permissions:
   eg.gmc:
@@ -35,4 +40,7 @@ permissions:
     default: op
   eg.gmsp:
     description: Allows players the use of /gmsp
+    default: op
+  eg.easygamemode:
+    description: Allows players the use of /easygamemode and /eg
     default: op
