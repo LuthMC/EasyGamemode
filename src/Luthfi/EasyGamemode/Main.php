@@ -1,5 +1,7 @@
 <?php
 
+# Github: https://github.com/LuthMC
+
 namespace Luthfi\EasyGamemode;
 
 use pocketmine\plugin\PluginBase;
@@ -48,7 +50,7 @@ class Main extends PluginBase implements Listener {
     private function setPlayerGamemode(Player $player, GameMode $gamemode, string $modeName, string $permission): void {
         if ($player->hasPermission($permission)) {
             $player->setGamemode($gamemode);
-            $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to $modeName.");
+            $player->sendMessage("§l§bEasy§3Gamemode§r §7| §aChange gamemode to $modeName");
         } else {
             $player->sendMessage("§cYou do not have permission to use this command.");
         }
@@ -58,7 +60,7 @@ class Main extends PluginBase implements Listener {
         if (count($args) === 0) {
             $sender->sendMessage("Usage: /easygamemode help | /eg help | /easygamemode ui");
         } elseif ($args[0] === "help") {
-            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §7=====\n- /easygamemode ui\n- /gmc » Change gamemode to Creative.\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator");
+            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §7=====\n- /gmc » Change gamemode to Creative.\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator");
         } elseif ($args[0] === "ui") {
             if ($sender instanceof Player) {
                 $this->openGamemodeForm($sender);
@@ -92,12 +94,12 @@ class Main extends PluginBase implements Listener {
             }
         });
 
-        $form->setTitle("Select Gamemode");
-        $form->setContent("Please select your desired gamemode:");
-        $form->addButton("Creative");
-        $form->addButton("Survival");
-        $form->addButton("Adventure");
-        $form->addButton("Spectator");
+        $form->setTitle("§l§bSelect §3Gamemode");
+        $form->setContent("§7Please select your desired gamemode:");
+        $form->addButton("§bCreative");
+        $form->addButton("§cSurvival");
+        $form->addButton("§aAdventure");
+        $form->addButton("§eSpectator");
 
         $player->sendForm($form);
     }
