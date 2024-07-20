@@ -1,4 +1,5 @@
-# EasyGamemode
+# EasyGamemode V2
+A simple plugin to change gamemode easily
 
 ### ⚙️ Commands
 | Commands | Description |

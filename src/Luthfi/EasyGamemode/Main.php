@@ -9,59 +9,78 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
+use LootSpace369\LSFormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
     public function onEnable(): void {
-        $this->getLogger()->info("EasyGamemode Plugins Enabled!");
+        $this->getLogger()->info("EasyGamemode Plugin Enabled!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
         if (!$sender instanceof Player) {
-            $sender->sendMessage(TextFormat::RED . "This command can only be used in-game.");
+            $sender->sendMessage("§cThis command can only be used in-game.");
             return false;
         }
 
-        switch ($command->getName()) {
-            case "gmc":
-                if ($sender->hasPermission("eg.gmc")) {
-                    $sender->setGamemode(GameMode::CREATIVE());
-                    $sender->sendMessage(TextFormat::GREEN . "Gamemode set to Creative.");
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You do not have permission to use this command.");
-                }
-                return true;
-
-            case "gms":
-                if ($sender->hasPermission("eg.gms")) {
-                    $sender->setGamemode(GameMode::SURVIVAL());
-                    $sender->sendMessage(TextFormat::GREEN . "Gamemode set to Survival.");
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You do not have permission to use this command.");
-                }
-                return true;
-
-            case "gma":
-                if ($sender->hasPermission("eg.gma")) {
-                    $sender->setGamemode(GameMode::ADVENTURE());
-                    $sender->sendMessage(TextFormat::GREEN . "Gamemode set to Adventure.");
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You do not have permission to use this command.");
-                }
-                return true;
-
-            case "gmsp":
-                if ($sender->hasPermission("eg.gmsp")) {
-                    $sender->setGamemode(GameMode::SPECTATOR());
-                    $sender->sendMessage(TextFormat::GREEN . "Gamemode set to Spectator.");
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You do not have permission to use this command.");
-                }
-                return true;
-
-            default:
-                return false;
+        if ($command->getName() === "gm") {
+            $this->openGamemodeForm($sender);
+            return true;
         }
+
+        return false;
+    }
+
+    public function openGamemodeForm(Player $player): void {
+        $form = new SimpleForm(function (Player $player, $data) {
+            if ($data === null) {
+                return;
+            }
+
+            switch ($data) {
+                case 0:
+                    if ($player->hasPermission("eg.gmc")) {
+                        $player->setGamemode(GameMode::CREATIVE());
+                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Creative.");
+                    } else {
+                        $player->sendMessage("§cYou do not have permission to use this command.");
+                    }
+                    break;
+                case 1:
+                    if ($player->hasPermission("eg.gms")) {
+                        $player->setGamemode(GameMode::SURVIVAL());
+                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Survival.");
+                    } else {
+                        $player->sendMessage("§cYou do not have permission to use this command.");
+                    }
+                    break;
+                case 2:
+                    if ($player->hasPermission("eg.gma")) {
+                        $player->setGamemode(GameMode::ADVENTURE());
+                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Adventure.");
+                    } else {
+                        $player->sendMessage("§cYou do not have permission to use this command.");
+                    }
+                    break;
+                case 3:
+                    if ($player->hasPermission("eg.gmsp")) {
+                        $player->setGamemode(GameMode::SPECTATOR());
+                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Spectator.");
+                    } else {
+                        $player->sendMessage("§cYou do not have permission to use this command.");
+                    }
+                    break;
+            }
+        });
+
+        $form->setTitle("§l§bSelect §3Gamemode");
+        $form->setContent("§7Please select your desired gamemode:");
+        $form->addButton("§bCreative");
+        $form->addButton("§cSurvival");
+        $form->addButton("§aAdventure");
+        $form->addButton("§eSpectator");
+
+        $player->sendForm($form);
     }
 }
