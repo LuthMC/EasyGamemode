@@ -14,7 +14,7 @@ use LootSpace369\LSFormAPI\SimpleForm;
 class Main extends PluginBase implements Listener {
 
     public function onEnable(): void {
-        $this->getLogger()->info("EasyGamemode Plugin Enabled!");
+        $this->getLogger()->info("EasyGamemode Enabled!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
@@ -24,12 +24,50 @@ class Main extends PluginBase implements Listener {
             return false;
         }
 
-        if ($command->getName() === "gm") {
-            $this->openGamemodeForm($sender);
-            return true;
+        switch ($command->getName()) {
+            case "gmc":
+                $this->setPlayerGamemode($sender, GameMode::CREATIVE(), "Creative", "eg.gmc");
+                return true;
+            case "gms":
+                $this->setPlayerGamemode($sender, GameMode::SURVIVAL(), "Survival", "eg.gms");
+                return true;
+            case "gma":
+                $this->setPlayerGamemode($sender, GameMode::ADVENTURE(), "Adventure", "eg.gma");
+                return true;
+            case "gmsp":
+                $this->setPlayerGamemode($sender, GameMode::SPECTATOR(), "Spectator", "eg.gmsp");
+                return true;
+            case "easygamemode":
+                $this->handleEasyGamemodeCommand($sender, $args);
+                return true;
+            default:
+                return false;
         }
+    }
 
-        return false;
+    private function setPlayerGamemode(Player $player, GameMode $gamemode, string $modeName, string $permission): void {
+        if ($player->hasPermission($permission)) {
+            $player->setGamemode($gamemode);
+            $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to $modeName.");
+        } else {
+            $player->sendMessage("§cYou do not have permission to use this command.");
+        }
+    }
+
+    private function handleEasyGamemodeCommand(CommandSender $sender, array $args): void {
+        if (count($args) === 0) {
+            $sender->sendMessage("Usage: /easygamemode help | /eg help | /easygamemode ui");
+        } elseif ($args[0] === "help") {
+            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §7=====\n- /easygamemode ui\n- /gmc » Change gamemode to Creative.\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator");
+        } elseif ($args[0] === "ui") {
+            if ($sender instanceof Player) {
+                $this->openGamemodeForm($sender);
+            } else {
+                $sender->sendMessage("§cThis command can only be used in-game.");
+            }
+        } else {
+            $sender->sendMessage("Usage: /easygamemode help | /eg help | /easygamemode ui");
+        }
     }
 
     public function openGamemodeForm(Player $player): void {
@@ -40,46 +78,26 @@ class Main extends PluginBase implements Listener {
 
             switch ($data) {
                 case 0:
-                    if ($player->hasPermission("eg.gmc")) {
-                        $player->setGamemode(GameMode::CREATIVE());
-                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Creative.");
-                    } else {
-                        $player->sendMessage("§cYou do not have permission to use this command.");
-                    }
+                    $this->setPlayerGamemode($player, GameMode::CREATIVE(), "Creative", "eg.gmc");
                     break;
                 case 1:
-                    if ($player->hasPermission("eg.gms")) {
-                        $player->setGamemode(GameMode::SURVIVAL());
-                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Survival.");
-                    } else {
-                        $player->sendMessage("§cYou do not have permission to use this command.");
-                    }
+                    $this->setPlayerGamemode($player, GameMode::SURVIVAL(), "Survival", "eg.gms");
                     break;
                 case 2:
-                    if ($player->hasPermission("eg.gma")) {
-                        $player->setGamemode(GameMode::ADVENTURE());
-                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Adventure.");
-                    } else {
-                        $player->sendMessage("§cYou do not have permission to use this command.");
-                    }
+                    $this->setPlayerGamemode($player, GameMode::ADVENTURE(), "Adventure", "eg.gma");
                     break;
                 case 3:
-                    if ($player->hasPermission("eg.gmsp")) {
-                        $player->setGamemode(GameMode::SPECTATOR());
-                        $player->sendMessage("§bEasy§3Gamemode §7| §aGamemode set to Spectator.");
-                    } else {
-                        $player->sendMessage("§cYou do not have permission to use this command.");
-                    }
+                    $this->setPlayerGamemode($player, GameMode::SPECTATOR(), "Spectator", "eg.gmsp");
                     break;
             }
         });
 
-        $form->setTitle("§l§bSelect §3Gamemode");
-        $form->setContent("§7Please select your desired gamemode:");
-        $form->addButton("§bCreative");
-        $form->addButton("§cSurvival");
-        $form->addButton("§aAdventure");
-        $form->addButton("§eSpectator");
+        $form->setTitle("Select Gamemode");
+        $form->setContent("Please select your desired gamemode:");
+        $form->addButton("Creative");
+        $form->addButton("Survival");
+        $form->addButton("Adventure");
+        $form->addButton("Spectator");
 
         $player->sendForm($form);
     }
