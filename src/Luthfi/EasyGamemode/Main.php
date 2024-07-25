@@ -73,7 +73,7 @@ class Main extends PluginBase implements Listener {
     }
 
     public function openGamemodeForm(Player $player): void {
-        $form = new SimpleForm(function (Player $player, $data) {
+        $form = new SimpleForm("§l§bSelect §3Gamemode", "§7Please select your desired gamemode:", function (Player $player, $data) {
             if ($data === null) {
                 return;
             }
@@ -93,13 +93,13 @@ class Main extends PluginBase implements Listener {
                     break;
             }
         });
-
-        $form->setTitle("§l§bSelect §3Gamemode");
-        $form->setContent("§7Please select your desired gamemode:");
-        $form->addButton("§bCreative");
-        $form->addButton("§cSurvival");
-        $form->addButton("§aAdventure");
-        $form->addButton("§eSpectator");
+        
+        $form->addButton([
+                         "§bCreative",
+                         "§cSurvival",
+                         "§aAdventure",
+                         "§eSpectator"
+                         ]);
 
         $player->sendForm($form);
     }
