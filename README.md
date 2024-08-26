@@ -18,3 +18,8 @@ A simple plugin to change gamemode easily
 | ```eg.gms``` | Gamemode Survival |
 | ```eg.gma``` | Gamemode Adventure |
 | ```eg.gmsp``` | Gamemode Spectator |
+
+### ⭐ Credits
+| Virion | Author |
+|---------|-------------|
+| [LSFormAPI](https://github.com/Vasync/LSFormAPI) | [Vasync](https://github.com/Vasync) |
