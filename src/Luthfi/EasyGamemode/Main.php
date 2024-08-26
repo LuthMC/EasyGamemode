@@ -92,10 +92,11 @@ class Main extends PluginBase implements Listener {
             }
         });
         
-        $form->addButton("§bCreative","https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmc.png");
-        $form->addButton("§cSurvival","https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gms.png");
-        $form->addButton("§aAdventure","https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gma.png");
-        $form->addButton("§eSpectator","https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmsp.png");
+        $form->addButton("§bCreative","https://raw.githubusercontent.com/LuthMC/EasyGamemode/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmc.png");
+        $form->addButton("§cSurvival","https://raw.githubusercontent.com/LuthMC/EasyGamemode/db9e0291339f771668e2b7b22bd29d47083407de/assets/gms.png");
+        $form->addButton("§aAdventure","https://raw.githubusercontent.com/LuthMC/EasyGamemode/db9e0291339f771668e2b7b22bd29d47083407de/assets/gma.png");
+        $form->addButton("§eSpectator","https://raw.githubusercontent.com/LuthMC/EasyGamemode/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmsp.png
+");
 
         $player->sendForm($form);
     }
