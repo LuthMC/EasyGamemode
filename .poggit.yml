@@ -5,8 +5,5 @@ branches:
 projects:
   EasyGamemode:
     path: ""
-    libs:
-      - src: LootSpace369/LSFormAPI/LSFormAPI
-        version: 1.0.1
-        branch: main
+    icon: icon.png
 ...

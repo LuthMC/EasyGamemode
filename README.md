@@ -1,4 +1,6 @@
-# EasyGamemode V2
+<img src="https://i.ibb.co.com/tCGYQgq/20240826-105936.png">
+
+# EasyGamemode
 A simple plugin to change gamemode easily
 
 ### ⚙️ Commands
@@ -16,3 +18,8 @@ A simple plugin to change gamemode easily
 | ```eg.gms``` | Gamemode Survival |
 | ```eg.gma``` | Gamemode Adventure |
 | ```eg.gmsp``` | Gamemode Spectator |
+
+### ⭐ Credits
+| Virion | Author |
+|---------|-------------|
+| [LSFormAPI](https://github.com/Vasync/LSFormAPI) | [Vasync](https://github.com/Vasync) |
