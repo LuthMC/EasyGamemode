@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener {
         if (count($args) === 0) {
             $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/eg §bui");
         } elseif ($args[0] === "help") {
-            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §r§7=====§r\n- /gmc » Change gamemode to Creative.\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator\n§7===== §l§bEasy§3Gamemode §r§7=====§r");
+            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §r§7=====§r\n-/eg help » Help Command\n- /eg ui » Open GamemodeUI\n- /gmc » Change gamemode to Creative\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator\n§7===== §l§bEasy§3Gamemode §r§7=====§r");
         } elseif ($args[0] === "ui") {
             if ($sender instanceof Player) {
                 $this->openGamemodeForm($sender);
