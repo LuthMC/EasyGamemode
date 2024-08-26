@@ -1,7 +1,5 @@
 <?php
 
-# Github: https://github.com/LuthMC
-
 namespace Luthfi\EasyGamemode;
 
 use pocketmine\plugin\PluginBase;
@@ -58,9 +56,9 @@ class Main extends PluginBase implements Listener {
 
     private function handleEasyGamemodeCommand(CommandSender $sender, array $args): void {
         if (count($args) === 0) {
-            $sender->sendMessage("Usage: /easygamemode help | /eg help | /easygamemode ui");
+            $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/eg §bui");
         } elseif ($args[0] === "help") {
-            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §7=====\n- /gmc » Change gamemode to Creative.\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator");
+            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §r§7=====§r\n-/eg help » Help Command\n- /eg ui » Open GamemodeUI\n- /gmc » Change gamemode to Creative\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator\n§7===== §l§bEasy§3Gamemode §r§7=====§r");
         } elseif ($args[0] === "ui") {
             if ($sender instanceof Player) {
                 $this->openGamemodeForm($sender);
@@ -68,7 +66,7 @@ class Main extends PluginBase implements Listener {
                 $sender->sendMessage("§cThis command can only be used in-game.");
             }
         } else {
-            $sender->sendMessage("Usage: /easygamemode help | /eg help | /easygamemode ui");
+            $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/eg §bui");
         }
     }
 
@@ -94,12 +92,10 @@ class Main extends PluginBase implements Listener {
             }
         });
         
-        $form->addButton([
-                         "§bCreative",
-                         "§cSurvival",
-                         "§aAdventure",
-                         "§eSpectator"
-                         ]);
+        $form->addButton("§bCreative","https://iili.io/dhFAs4I.png");
+        $form->addButton("§cSurvival","https://iili.io/dhFaLe1.png");
+        $form->addButton("§aAdventure","https://iili.io/dhFaO57.png");
+        $form->addButton("§eSpectator","https://iili.io/dhFc5hu.png");
 
         $player->sendForm($form);
     }
