@@ -92,12 +92,10 @@ class Main extends PluginBase implements Listener {
             }
         });
         
-        $form->addButton([
-                         "§bCreative",
-                         "§cSurvival",
-                         "§aAdventure",
-                         "§eSpectator"
-                         ]);
+        $form->addButton("§bCreative", 0, "https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmc.png");
+        $form->addButton("§cSurvival", 0, "https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gms.png");
+        $form->addButton("§aAdventure", 0, "https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gma.png");
+        $form->addButton("§eSpectator", 0, "https://github.com/LuthMC/EasyGamemode/blob/db9e0291339f771668e2b7b22bd29d47083407de/assets/gmsp.png");
 
         $player->sendForm($form);
     }
