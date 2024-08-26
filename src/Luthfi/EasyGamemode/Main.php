@@ -11,12 +11,12 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
-use LootSpace369\LSFormAPI\SimpleForm;
+use Luthfi\EasyGamemode\libs\LootSpace369\LSFormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
     public function onEnable(): void {
-        $this->getLogger()->info("EasyGamemode Enabled!");
+        $this->getLogger()->info("EasyGamemode Enabled");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
