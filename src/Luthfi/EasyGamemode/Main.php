@@ -14,7 +14,6 @@ use Luthfi\EasyGamemode\libs\LootSpace369\LSFormAPI\SimpleForm;
 class Main extends PluginBase implements Listener {
 
     public function onEnable(): void {
-        $this->getLogger()->info("EasyGamemode Enabled");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
@@ -66,7 +65,7 @@ class Main extends PluginBase implements Listener {
                 $sender->sendMessage("§cThis command can only be used in-game.");
             }
         } else {
-            $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/eg §bui");
+            $sender->sendMessage("Usage: /eg help §7| §f/eg ui");
         }
     }
 
