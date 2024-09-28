@@ -22,11 +22,11 @@
 ### 🔒 Permission
 | Permission | Description |
 |---------|-------------|
-| ```eg.gmc``` | Gamemode Creative |
-| ```eg.gms``` | Gamemode Survival |
-| ```eg.gma``` | Gamemode Adventure |
-| ```eg.gmsp``` | Gamemode Spectator |
-| ```eg.easygamemode``` | EasyGamemode Comamnd |
+| ```easygamemode.gmc``` | Gamemode Creative |
+| ```easygamemode.gms``` | Gamemode Survival |
+| ```easygamemode.gma``` | Gamemode Adventure |
+| ```easygamemode.gmsp``` | Gamemode Spectator |
+| ```easygamemode.easygamemode``` | EasyGamemode Comamnd |
 
 ### ⭐ Credits
 | Virion | Author |
