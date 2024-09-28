@@ -9,7 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
-use Luthfi\EasyGamemode\libs\LootSpace369\LSFormAPI\SimpleForm;
+use Vasync\LSFormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
@@ -25,16 +25,16 @@ class Main extends PluginBase implements Listener {
 
         switch ($command->getName()) {
             case "gmc":
-                $this->setPlayerGamemode($sender, GameMode::CREATIVE(), "Creative", "eg.gmc");
+                $this->setPlayerGamemode($sender, GameMode::CREATIVE(), "Creative", "easygamemode.gmc");
                 return true;
             case "gms":
-                $this->setPlayerGamemode($sender, GameMode::SURVIVAL(), "Survival", "eg.gms");
+                $this->setPlayerGamemode($sender, GameMode::SURVIVAL(), "Survival", "easygamemode.gms");
                 return true;
             case "gma":
-                $this->setPlayerGamemode($sender, GameMode::ADVENTURE(), "Adventure", "eg.gma");
+                $this->setPlayerGamemode($sender, GameMode::ADVENTURE(), "Adventure", "easygamemode.gma");
                 return true;
             case "gmsp":
-                $this->setPlayerGamemode($sender, GameMode::SPECTATOR(), "Spectator", "eg.gmsp");
+                $this->setPlayerGamemode($sender, GameMode::SPECTATOR(), "Spectator", "easygamemode.gmsp");
                 return true;
             case "easygamemode":
                 $this->handleEasyGamemodeCommand($sender, $args);
@@ -77,16 +77,16 @@ class Main extends PluginBase implements Listener {
 
             switch ($data) {
                 case 0:
-                    $this->setPlayerGamemode($player, GameMode::CREATIVE(), "Creative", "eg.gmc");
+                    $this->setPlayerGamemode($player, GameMode::CREATIVE(), "Creative", "easygamemode.gmc");
                     break;
                 case 1:
-                    $this->setPlayerGamemode($player, GameMode::SURVIVAL(), "Survival", "eg.gms");
+                    $this->setPlayerGamemode($player, GameMode::SURVIVAL(), "Survival", "easygamemode.gms");
                     break;
                 case 2:
-                    $this->setPlayerGamemode($player, GameMode::ADVENTURE(), "Adventure", "eg.gma");
+                    $this->setPlayerGamemode($player, GameMode::ADVENTURE(), "Adventure", "easygamemode.gma");
                     break;
                 case 3:
-                    $this->setPlayerGamemode($player, GameMode::SPECTATOR(), "Spectator", "eg.gmsp");
+                    $this->setPlayerGamemode($player, GameMode::SPECTATOR(), "Spectator", "easygamemode.gmsp");
                     break;
             }
         });
