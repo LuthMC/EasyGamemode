@@ -7,6 +7,6 @@ projects:
     path: ""
     icon: icon.png
     libs:
-      - src: Vasync\LSFormAPI\LSFormAPI
+      - src: LootSpace369\LSFormAPI\LSFormAPI
         version: ^1.0.2
 ...
