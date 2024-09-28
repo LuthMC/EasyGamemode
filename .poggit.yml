@@ -6,4 +6,7 @@ projects:
   EasyGamemode:
     path: ""
     icon: icon.png
+    libs:
+      - src: Vasync\LSFormAPI\LSFormAPI
+        version: ^1.0.2
 ...
