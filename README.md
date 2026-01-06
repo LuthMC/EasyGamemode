@@ -27,3 +27,8 @@
 | ```easygamemode.gma``` | Gamemode Adventure |
 | ```easygamemode.gmsp``` | Gamemode Spectator |
 | ```easygamemode.easygamemode``` | EasyGamemode Comamnd |
+
+### ⭐ Credits
+| Virion | Author |
+|---------|-------------|
+| [LSFormAPI](https://github.com/Vasync/LSFormAPI) | [Vasync](https://github.com/Vasync) |
