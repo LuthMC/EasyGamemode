@@ -1,6 +1,6 @@
 <?php
 
-namespace Luthfi\EasyGamemode;
+namespace LuthMC\EasyGamemode;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -9,7 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
-use Luthfi\EasyGamemode\libs\Vasync\LSFormAPI\SimpleForm;
+use LuthMC\EasyGamemode\libs\Vasync\LSFormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
