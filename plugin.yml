@@ -1,6 +1,6 @@
 name: EasyGamemode
 main: LuthMC\EasyGamemode\Main
-version: 0.0.1
+version: 0.0.2
 api: 5.0.0
 author: LuthMC
 description: A simple plugin to change gamemode easily
@@ -18,6 +18,9 @@ commands:
   gmsp:
     description: Change gamemode to spectator
     permission: easygamemode.gmsp
+  gmui:
+    description: Open Gamemode UI
+    permission: easygamemode.ui
   easygamemode:
     description: Main command for EasyGamemode
     usage: /easygamemode [help]
@@ -36,6 +39,9 @@ permissions:
     default: op
   easygamemode.gmsp:
     description: Allow players to use /gmsp
+    default: op
+  easygamemode.ui:
+    description: Allow players to use /gmui
     default: op
   easygamemode.easygamemode:
     description: Allow players to use /easygamemode and /eg
