@@ -12,21 +12,22 @@
 ### ⚙️ Commands
 | Commands | Description |
 |---------|-------------|
-| ```/gmc``` | Change to creative |
-| ```/gms``` | Change to survival |
-| ```/gma``` | Change to adventure |
-| ```/gmsp``` | Change to spectator |
-| ```/eg ui``` | Open GamemodeUI |
+| ```/gmc``` | Change to gamemode creative |
+| ```/gms``` | Change to gamemode survival |
+| ```/gma``` | Change to gamemode adventure |
+| ```/gmsp``` | Change to gamemode spectator |
+| ```/gmui``` | Open GamemodeUI |
 | ```/eg help``` | Help Command |
 
 ### 🔒 Permission
 | Permission | Description |
 |---------|-------------|
-| ```easygamemode.gmc``` | Gamemode Creative |
-| ```easygamemode.gms``` | Gamemode Survival |
-| ```easygamemode.gma``` | Gamemode Adventure |
-| ```easygamemode.gmsp``` | Gamemode Spectator |
-| ```easygamemode.easygamemode``` | EasyGamemode Comamnd |
+| ```easygamemode.gmc``` | Allow players use /gmc |
+| ```easygamemode.gms``` | Allow players use /gms |
+| ```easygamemode.gma``` | Allow players use /gma |
+| ```easygamemode.gmsp``` | Allow players use /gmsp |
+| ```easygamemode.ui``` | Allow players use /gmui |
+| ```easygamemode.easygamemode``` | Allow players use /eg |
 
 ### ⭐ Credits
 | Virion | Author |
