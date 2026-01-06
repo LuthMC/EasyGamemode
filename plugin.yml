@@ -1,8 +1,8 @@
 name: EasyGamemode
-main: Luthfi\EasyGamemode\Main
-version: 1.0.1
+main: LuthMC\EasyGamemode\Main
+version: 0.0.1
 api: 5.0.0
-author: Luthfi
+author: LuthMC
 description: A simple plugin to change gamemode easily
 
 commands:
@@ -26,17 +26,17 @@ commands:
 
 permissions:
   easygamemode.gmc:
-    description: Allows players the use of /gmc
+    description: Allow players to use /gmc
     default: op
   easygamemode.gms:
-    description: Allows players the use of /gms
+    description: Allow players to use /gms
     default: op
   easygamemode.gma:
-    description: Allows players the use of /gma
+    description: Allow players to use /gma
     default: op
   easygamemode.gmsp:
-    description: Allows players the use of /gmsp
+    description: Allow players to use /gmsp
     default: op
   easygamemode.easygamemode:
-    description: Allows players the use of /easygamemode and /eg
+    description: Allow players to use /easygamemode and /eg
     default: op
