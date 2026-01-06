@@ -36,6 +36,9 @@ class Main extends PluginBase implements Listener {
             case "gmsp":
                 $this->setPlayerGamemode($sender, GameMode::SPECTATOR(), "Spectator", "easygamemode.gmsp");
                 return true;
+            case "gmui":
+                $this->openGamemodeForm($sender);
+                return true;
             case "easygamemode":
                 $this->handleEasyGamemodeCommand($sender, $args);
                 return true;
@@ -47,7 +50,7 @@ class Main extends PluginBase implements Listener {
     private function setPlayerGamemode(Player $player, GameMode $gamemode, string $modeName, string $permission): void {
         if ($player->hasPermission($permission)) {
             $player->setGamemode($gamemode);
-            $player->sendMessage("§l§bEasy§3Gamemode§r §7| §aChange gamemode to $modeName");
+            $player->sendMessage("§bEasy§3Gamemode§r §7| §aChange gamemode to $modeName");
         } else {
             $player->sendMessage("§cYou do not have permission to use this command.");
         }
@@ -55,17 +58,11 @@ class Main extends PluginBase implements Listener {
 
     private function handleEasyGamemodeCommand(CommandSender $sender, array $args): void {
         if (count($args) === 0) {
-            $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/eg §bui");
+            $sender->sendMessage("Usage: §3/eg §bhelp §7| §3/gmui");
         } elseif ($args[0] === "help") {
-            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §r§7=====§r\n-/eg help » Help Command\n- /eg ui » Open GamemodeUI\n- /gmc » Change gamemode to Creative\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator\n§7===== §l§bEasy§3Gamemode §r§7=====§r");
-        } elseif ($args[0] === "ui") {
-            if ($sender instanceof Player) {
-                $this->openGamemodeForm($sender);
-            } else {
-                $sender->sendMessage("§cThis command can only be used in-game.");
-            }
+            $sender->sendMessage("§7===== §l§bEasy§3Gamemode §r§7=====§r\n-/eg help » Help Command\n- /gmui » Open GamemodeUI\n- /gmc » Change gamemode to Creative\n- /gms » Change gamemode to Survival\n- /gma » Change gamemode to Adventure\n- /gmsp » Change gamemode to Spectator");
         } else {
-            $sender->sendMessage("Usage: /eg help §7| §f/eg ui");
+            $sender->sendMessage("Usage: /eg help §7| §f/gmui");
         }
     }
 
