@@ -37,7 +37,11 @@ class Main extends PluginBase implements Listener {
                 $this->setPlayerGamemode($sender, GameMode::SPECTATOR(), "Spectator", "easygamemode.gmsp");
                 return true;
             case "gmui":
-                $this->openGamemodeForm($sender);
+                if ($sender->hasPermission("easygamemode.ui")) {
+                    $this->openGamemodeForm($sender);
+                } else {
+                    $sender->sendMessage("§cYou do not have permission to use this command.");
+                }
                 return true;
             case "easygamemode":
                 $this->handleEasyGamemodeCommand($sender, $args);
