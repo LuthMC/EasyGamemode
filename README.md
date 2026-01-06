@@ -1,5 +1,5 @@
 <p align="center">
- <img width="100px" src="https://i.ibb.co.com/tCGYQgq/20240826-105936.png" align="center" alt="GitHub Readme Stats" />
+ <img width="100px" src="https://i.ibb.co/g0SSC0F/icon.png" align="center" alt="Icon" />
  <h2 align="center">EasyGamemode</h2>
  <p align="center">A simple plugin to change gamemode easily.</p>
 </p>
@@ -27,8 +27,3 @@
 | ```easygamemode.gma``` | Gamemode Adventure |
 | ```easygamemode.gmsp``` | Gamemode Spectator |
 | ```easygamemode.easygamemode``` | EasyGamemode Comamnd |
-
-### ⭐ Credits
-| Virion | Author |
-|---------|-------------|
-| [LSFormAPI](https://github.com/Vasync/LSFormAPI) | [Vasync](https://github.com/Vasync) |
